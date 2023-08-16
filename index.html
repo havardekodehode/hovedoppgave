@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pokemon Site</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Handjet&family=Montserrat:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <link rel="stylesheet" href="index.css" />
+    <script type="module" src="index.js"></script>
+
+    <body>
+        <header>
+            <nav class="navbar container">
+                <a class="logo_link" href="index.html"
+                    ><img
+                        class="logo"
+                        src="images/pokeball.png"
+                        alt="image of pixelated pokeball"
+                /></a>
+                <div class="navbar_menu">
+                    <ul class="navbar_list">
+                        <li class="navbar_list_item">Pokedex</li>
+                        <li class="navbar_list_item">Map</li>
+                        <li class="navbar_list_item">Contact</li>
+                    </ul>
+                </div>
+                <div class="hamburger">
+                    <svg
+                        width="50"
+                        height="50"
+                        viewBox="0 0 50 50"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect width="50" height="50" />
+                        <line
+                            x1="13.5"
+                            y1="11.5"
+                            x2="36.5"
+                            y2="11.5"
+                            stroke="black"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                        />
+                        <line
+                            x1="13.5"
+                            y1="24.5"
+                            x2="36.5"
+                            y2="24.5"
+                            stroke="black"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                        />
+                        <line
+                            x1="13.5"
+                            y1="37.5"
+                            x2="36.5"
+                            y2="37.5"
+                            stroke="black"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="pokedex">
+                <div class="pokemonContainer">
+                    <h3 class="name">Bulbasaur</h3>
+                    <img src="images/pokeball.png" alt="" srcset="" />
+                    <div class="stats">
+                        <p class="stat">Strent:</p>
+                        <p class="stat">Speed:</p>
+                        <p class="stat">Defense:</p>
+                        <p class="stat">Psych:</p>
+                        <p class="stat">Health:</p>
+                        <p class="stat">Looks:</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

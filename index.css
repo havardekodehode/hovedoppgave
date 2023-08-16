@@ -1,0 +1,153 @@
+/* CSS Reset */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+}
+
+:root {
+    /* Palette */
+    --color-1: #f8e8f8;
+    --color-2: #d0a8b0;
+    --color-3: #787890;
+    --color-4: #000000;
+    /* Font */
+    font-size: 32px;
+    font-family: "handjet";
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    /* overflow: hidden; */
+}
+
+.logo_link,
+.hamburger {
+    padding: 10px 20px;
+    /* background-color: brown; */
+}
+
+.logo {
+    height: 50px;
+}
+
+.navbar {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar_menu {
+    background-color: blueviolet;
+}
+
+.navbar_list {
+    list-style-type: none;
+    display: flex;
+    padding: 5px;
+    gap: 1rem;
+}
+
+.navbar_list > li {
+    padding: 10px 20px;
+    background-color: red;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar_list {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+main {
+    background-color: var(--color-3);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokedex {
+    height: 50%;
+    width: 100%;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+}
+
+.pokemonContainer {
+    height: 14rem;
+    width: 16rem;
+    border: black solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pokemonContainer > * {
+    padding-bottom: 1rem;
+}
+
+.pokemonContainer img {
+    height: 6rem;
+}
+
+.stats {
+    border: black solid 1px;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.stats > * {
+    width: 6rem;
+}
+
+/* #openingOpened {
+    visibility: hidden;
+} */
+
+/* #rucksack {
+    transform: translateX(0%);
+    transition: all 5s ease-in;
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: translateX(50%);
+} */
+
+.slideIn {
+    /* transition: all 1s ease-in; */
+    transform: scale(2);
+    fill: red;
+    color: red;
+    background-color: red;
+}
+
+/* svg:hover #closed {
+    transition: all 2s ease-out;
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: translateY(-90%) rotateX(180deg);
+} */
