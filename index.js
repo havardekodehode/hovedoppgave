@@ -39,6 +39,11 @@ navState = "getDetails";
 renderPokedex(pokemonData){
     const pokedexContainer = createElement("div", {class: "pokedex"})
     const pokemonContainer = createElement("div", {class: "pokemonContainer"})
+    const pokemonName = createElement("h3", {class: "name"},{},"Bulbasaur") //testname pokemonData.forEach(pokemon.name)
+    const pokemonImage = createElementImage(`Sprite of Bulbasaur`, "images/pokeball.png") //${pokemon.name} and ${pokemon.image}
+
+    pokemonContainer.append(pokemonName, )
+    pokedexContainer.append(pokemonContainer)
     mainContainer.append(pokedexContainer)
 
 }
@@ -52,6 +57,8 @@ const createElement = (type, attributes, styles, textContent) => {
     el.textContent = textContent;
     return el;
 };
+
+const createElementImage(alt, src)
 
 
 
