@@ -129,7 +129,12 @@ main {
     /* width: 6rem; */
     display: flex;
     gap: 4px;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 105%;
+    padding: 0.2rem;
+}
+
+.statAndValueContainer {
 }
 
 /* #openingOpened {

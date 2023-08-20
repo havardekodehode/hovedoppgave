@@ -1,12 +1,26 @@
 // import {getData} from "./data/api.js"
 
-const mainContainer = document.querySelector("main");
+const mainContainer = document.querySelector(".dexContainer");
 
 const baseUrl = "https://pokeapi.co/api/v2/pokemon?limit=151";
 // const baseUrl = "https://pokeapi.co/api/v2/pokemon/1/";
 
-let navState = "main";
-navState = "getDetails";
+let navState = "getDetails";
+
+let index = 0;
+
+document
+    .getElementById("prev")
+    .addEventListener(
+        "click",
+        () => (index !== 0 ? index-- : null, navigate(baseUrl))
+    );
+document
+    .getElementById("next")
+    .addEventListener(
+        "click",
+        () => (index !== 151 ? index++ : null, navigate(baseUrl))
+    );
 
 async function getData(url) {
     const req = await fetch(url);
@@ -21,7 +35,7 @@ async function navigate(url) {
     } else {
         const pokemonList = data.results;
         pokemonList.forEach(async (pokemon, i) => {
-            if (i != 5) {
+            if (i != index) {
                 return;
             }
             const details = await getData(pokemon.url);
@@ -61,8 +75,11 @@ function renderPokedex(pokemonData, details) {
             });
         } else {
             const specialStatName =
-                stat.name.substring(0, 1) + stat.name.substring(6, 12);
-            const statName = createElement("p", {
+                stat.name.substring(0, 2) +
+                ". " +
+                stat.name.substring(8, 11) +
+                ".";
+            statName = createElement("p", {
                 textContent: specialStatName.toUpperCase(),
                 className: "stat",
             });
