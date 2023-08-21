@@ -50,19 +50,23 @@ body {
 }
 
 .navbar_menu {
-    background-color: rgb(193, 193, 193);
+    /* background-color: rgb(193, 193, 193); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4rem;
 }
 
 .navbar_list {
     list-style-type: none;
     display: flex;
     padding: 5px;
-    gap: 1rem;
+    gap: 4rem;
 }
 
 .navbar_list > li {
     padding: 10px 20px;
-    background-color: rgb(84, 84, 84);
+    /* background-color: rgb(84, 84, 84); */
 }
 
 .hamburger {
