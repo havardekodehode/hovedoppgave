@@ -29,6 +29,7 @@ body {
     margin: 0;
     height: 100vh;
     font-size: var(--font-size);
+    font-family: var(--font-family);
     /* overflow: hidden; */
 }
 
@@ -49,7 +50,7 @@ body {
 }
 
 .navbar_menu {
-    background-color: blueviolet;
+    background-color: rgb(193, 193, 193);
 }
 
 .navbar_list {
@@ -61,7 +62,7 @@ body {
 
 .navbar_list > li {
     padding: 10px 20px;
-    background-color: red;
+    background-color: rgb(84, 84, 84);
 }
 
 .hamburger {
@@ -107,6 +108,13 @@ main {
     flex-direction: column;
 }
 
+#prev,
+#next {
+    height: 3rem;
+    width: 4rem;
+    background-color: var(--color-1);
+}
+
 .pokemonContainer > * {
     padding-bottom: 1rem;
 }
@@ -117,7 +125,7 @@ main {
 
 .stats {
     border: black solid 1px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     padding: 0.2rem;
     display: grid;
     grid-template-columns: auto auto;
