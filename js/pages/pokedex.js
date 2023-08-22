@@ -22,6 +22,8 @@ const typeColors = [
     { type: "fairy", color: "D685AD" },
 ];
 
+console.log(_.find(typeColors, { type: "ghost" }));
+
 export function renderPokedex(pokemonData, details) {
     const pokedexContainer = createElement("div", { className: "pokedex" });
     const pokemonContainer = createElement("div", {

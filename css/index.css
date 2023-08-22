@@ -25,6 +25,21 @@
     --font-family: "handjet";
 }
 
+/* Consolidated rule for elements with display: flex */
+.logo_link,
+.hamburger,
+.navbar,
+.navbar_menu,
+.navbar_list,
+.hamburger,
+main,
+.pokedex,
+.pokemonContainer,
+.stats > *,
+.statAndValueContainer {
+    display: flex;
+}
+
 body {
     margin: 0;
     height: 100vh;
@@ -45,13 +60,11 @@ body {
 
 .navbar {
     /* background-color: aqua; */
-    display: flex;
     justify-content: space-between;
 }
 
 .navbar_menu {
     /* background-color: rgb(193, 193, 193); */
-    display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 4rem;
@@ -59,7 +72,6 @@ body {
 
 .navbar_list {
     list-style-type: none;
-    display: flex;
     padding: 5px;
     gap: 4rem;
 }
@@ -86,19 +98,18 @@ body {
 main {
     background-color: var(--color-3);
     height: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .pokedex {
-    height: 20rem;
+    height: 22rem;
     width: 100%;
     background-color: var(--color-1);
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 1rem;
     /* flex-wrap: wrap; */
 }
 
@@ -106,7 +117,6 @@ main {
     height: 18rem;
     width: 16rem;
     /* border: black solid 1px; */
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -139,7 +149,6 @@ main {
 
 .stats > * {
     /* width: 6rem; */
-    display: flex;
     gap: 4px;
     justify-content: space-between;
     width: 105%;
@@ -188,7 +197,7 @@ main {
     }
 }
 
-@media screen and (min-width: 376) {
+@media screen and (min-width: 1200px) {
     :root {
         --font-size: 32px;
     }
