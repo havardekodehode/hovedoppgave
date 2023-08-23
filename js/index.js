@@ -69,7 +69,7 @@ async function getPokemonSprite(pokemonName) {
 
 document.getElementById("search").addEventListener("input", (e) => {
     getPokemonData(pokemonUrl).then((pokemons) =>
-        renderSearch(e.target.value, pokemons)
+        renderSearch(e.target.value.toLowerCase(), pokemons)
     );
 });
 //renderSearch(this.value, pokemonData)
