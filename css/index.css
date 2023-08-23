@@ -144,7 +144,10 @@ main {
     font-size: 2rem;
     border: black solid 0.1px;
 }
-
+.pokemonResult:hover {
+    scale: 1.02;
+    cursor: pointer;
+}
 .pokemonResults img {
     height: 100%;
 }

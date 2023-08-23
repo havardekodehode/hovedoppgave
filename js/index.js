@@ -137,3 +137,12 @@ function renderSearch(searchInput = "", pokemonsArr, pokemonDetails) {
         document.querySelectorAll(".results").forEach((e) => e.remove());
     }
 }
+
+document.addEventListener("click", (event) => {
+    const resultContainer = document.querySelector(".results");
+    if (document.querySelector(".results")) {
+        if (!resultContainer.contains(event.target)) {
+            resultContainer.remove();
+        }
+    }
+});
