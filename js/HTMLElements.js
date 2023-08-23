@@ -1,4 +1,5 @@
 export const dexContainer = document.querySelector(".dexContainer");
+export const wrapper = document.querySelector(".wrapper");
 export const searchInput = document.getElementById("search");
 export function navButtons(index, navigatePokemons) {
     document
