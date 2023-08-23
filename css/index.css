@@ -126,7 +126,7 @@ main {
 
 .results {
     width: 15rem;
-    height: 5rem;
+    height: fit-content;
     background-color: var(--color-2);
     position: absolute;
     /* bottom: 0; */
@@ -140,7 +140,8 @@ main {
 .pokemonResult {
     display: flex;
     justify-content: space-between;
-    height: 33%;
+    height: 2rem;
+    font-size: 2rem;
     border: black solid 0.1px;
 }
 
