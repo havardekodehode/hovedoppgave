@@ -15,7 +15,7 @@ Simple website calculating relative weight to earth, on each planet of the solar
 
 ### Screenshot
 
-![](images/landingPageMobile2.png)
+![](images/landingPageMobile3.png)
 
 <!-- ![](images/screenshotMain.png) -->
 
