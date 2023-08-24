@@ -1,0 +1,67 @@
+/* Flexbox utility classes */
+/* Testing utility first approach for display properties */
+
+/* Flex*/
+.flex-row {
+    display: flex;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+}
+
+/* Grid attrib */
+.gtc-auto {
+    grid-template-columns: auto;
+}
+.gtc-auto2 {
+    grid-template-columns: auto auto;
+}
+.gtc-auto3 {
+    grid-template-columns: auto auto auto;
+}
+
+/* Justify/align */
+.just-sta {
+    justify-content: flex-start;
+}
+.just-cen {
+    justify-content: center;
+}
+.just-spaB {
+    justify-content: space-between;
+}
+.just-end {
+    justify-content: flex-end;
+}
+.alig-sta {
+    align-items: flex-start;
+}
+.alig-cen {
+    align-items: center;
+}
+.alig-end {
+    align-items: flex-end;
+}
+
+/* Gap */
+.gap1r {
+    gap: 1rem;
+}
+.gap2r {
+    gap: 2rem;
+}
+.gap3r {
+    gap: 3rem;
+}
+.gap4r {
+    gap: 4rem;
+}
+.gap5r {
+    gap: 5rem;
+}

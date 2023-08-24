@@ -23,9 +23,11 @@ export const typeColors = [
 ];
 
 export function renderPokedex(pokemonData, details) {
-    const pokedexContainer = createElement("div", { className: "pokedex" });
+    const pokedexContainer = createElement("div", {
+        className: "pokedex ",
+    });
     const pokemonContainer = createElement("div", {
-        className: "pokemonContainer",
+        className: "pokemonContainer flex-col just-cen alig-cen",
     });
     const pokemonName = createElement("h3", {
         style: "text-align: center",
@@ -39,11 +41,13 @@ export function renderPokedex(pokemonData, details) {
         src: details.sprites.other["official-artwork"].front_default,
         alt: `Sprite of ${pokemonData.name}`,
     });
-    const container = createElement("div", { className: "stats" });
+    const container = createElement("div", {
+        className: "stats grid gtc-auto2",
+    });
 
     const pokemonStats = details.stats.map(({ base_stat, stat }) => {
         const statAndValcontainer = createElement("div", {
-            className: "statAndValue",
+            className: "statAndValue flex-row just-spaB",
         });
         let statName = "";
         if (!stat.name.includes("special")) {

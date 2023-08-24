@@ -17,19 +17,24 @@
         />
     </head>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/typography.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/media-quries.css" />
     <script type="module" src="js/index.js"></script>
 
     <body>
         <header>
-            <nav class="navbar container">
-                <a class="logo_link" href="index.html"
+            <nav class="navbar flex-row just-spaB container">
+                <a class="logo_link flex-row" href="index.html"
                     ><img
                         class="logo"
                         src="images/pokeball.png"
                         alt="image of pixelated pokeball"
                 /></a>
                 <div class="navbar_menu">
-                    <ul class="navbar_list">
+                    <ul class="navbar_list flex-row">
                         <li class="navbar_list_item" id="pokedexNav">
                             Pokedex
                         </li>
@@ -79,22 +84,11 @@
                 </div>
             </nav>
         </header>
-        <main>
+        <main class="flex-col just-sta alig-cen">
             <div class="searchContainer">
                 <input type="text" id="search" class="search" />
             </div>
-            <!-- <div class="results">
-                <ul>
-                    <li class="pokemonResult">
-                        <p class="name">Bulbasaur</p>
-                        <img src="images/pokeball.png" alt="" srcset="">
-                    </li>
-                    <li class="pokemonResult"></li>
-                    <li class="pokemonResult"></li>
-                 
-                </ul>
-            </div> -->
-            <div class="wrapper">
+            <div class="mainContainer flex-row just-cen alig-cen">
                 <button id="prev"><</button>
                 <div class="dexContainer"></div>
                 <button id="next">></button>

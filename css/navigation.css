@@ -1,0 +1,39 @@
+.logo_link,
+.hamburger {
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.navbar {
+    /* background-color: aqua; */
+    /* position: absolute */
+}
+
+.navbar_menu {
+    /* background-color: rgb(193, 193, 193); */
+    justify-content: center;
+    align-items: center;
+    margin-right: 4rem;
+}
+
+.navbar_list {
+    list-style-type: none;
+    padding: 5px;
+    gap: 4rem;
+}
+
+.navbar_list > li {
+    padding: 10px 20px;
+    /* background-color: rgb(84, 84, 84); */
+}
+
+.navbar_list > li:hover {
+    background-color: rgb(190, 190, 190);
+}
+
+.hamburger {
+    display: none;
+}

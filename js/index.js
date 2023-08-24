@@ -4,6 +4,7 @@ import { getData } from "./data/data.js";
 import { createElement } from "./utils/DOMManipulation.js";
 
 const pokemonUrl = "https://pokeapi.co/api/v2/pokemon?limit=151/";
+
 let index = 0;
 
 async function getPokemonData(url) {
@@ -118,9 +119,10 @@ function renderSearch(searchInput = "", pokemonsArr, pokemonDetails) {
                 alt: `Picture displaying ${result.name}`,
             });
             resultContainer.addEventListener("click", async () => {
-                console.log("You clicked: " + result.name);
-                console.log(await getDetails(result.name));
-                navigatePokemons((await getDetails(result.name)).id - 1);
+                // console.log("You clicked: " + result.name);
+                // console.log(await getDetails(result.name));
+                index = (await getDetails(result.name)).id - 1;
+                navigatePokemons(index);
                 // renderPokedex();
             });
             resultContainer.append(name, image); //
