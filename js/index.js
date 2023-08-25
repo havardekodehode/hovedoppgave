@@ -17,7 +17,7 @@ async function getPokemonData(url) {
         console.log(error);
     }
 }
-
+6;
 // getPokemonData(pokemonUrl).then(arr=>console.log(arr))
 // console.log(getPokemonData(pokemonUrl));
 
@@ -82,35 +82,41 @@ navigatePokemons(0);
 // :
 
 function renderSearch(searchInput = "", pokemonsArr, pokemonDetails) {
+    //Removes old results
     document.querySelectorAll(".results").forEach((e) => e.remove());
-    if (searchInput.length >= 2) {
+
+    //Checks if input field has more than one letter
+    if (searchInput.length > 0) {
+        //Filters pokemon from all 151 pokemons, to pokemons which names, contains the the input string
         const results = pokemonsArr
-            .filter(
-                (pokemon) =>
-                    pokemon.name
-                        .substring(0, searchInput.length)
-                        .toLowerCase() === searchInput
+            .filter((pokemon) =>
+                pokemon.name.toLowerCase().includes(searchInput)
             ) //
             .sort();
 
         const resultsContainer = createElement("div", {
             className: "results",
         });
+
         const resultsList = createElement("ul");
+
+        //Loops through the filtered pokemon arrray,
+        //to create list elements with pokemon name
+        //and image, then lastly appending each into the ul element resultslist
         results.forEach(async (result, i) => {
-            if (i === resultsList.length) {
-                //|| i === 3
-                return;
-            }
-            // console.log(result.name);
             const resultContainer = createElement("li", {
                 className: "pokemonResult",
             });
+
             const name = createElement("p", {
                 className: "name",
                 textContent: result.name,
             });
+
             const image = createElement("img", {
+                //for each pokemons in the filtered array, getDetails is ran,
+                //to access the give pokemons sprite, so imagessrc can be set to
+                //display the image
                 src: `${
                     (await getDetails(result.name)).sprites.other[
                         "official-artwork"
@@ -118,14 +124,15 @@ function renderSearch(searchInput = "", pokemonsArr, pokemonDetails) {
                 }`,
                 alt: `Picture displaying ${result.name}`,
             });
+            //Eventlistener for click is added, so that if the listed pokemon is clicked, it is displayed on the pokedex
             resultContainer.addEventListener("click", async () => {
-                // console.log("You clicked: " + result.name);
-                // console.log(await getDetails(result.name));
                 index = (await getDetails(result.name)).id - 1;
                 navigatePokemons(index);
-                // renderPokedex();
             });
-            resultContainer.append(name, image); //
+            resultContainer.append(name, image);
+            //for each pokemons in the filtered array, getDetails is ran,
+            //to access the give pokemons type, so a background color to
+            //the li element can be set based on this
             const type = (await getDetails(result.name)).types[0].type.name;
             const pokemonColor = `#${
                 typeColors.find((entry) => entry.type === type).color
