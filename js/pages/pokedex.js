@@ -1,28 +1,53 @@
-import { dexContainer, wrapper } from "../HTMLElements.js";
-import { createElement } from "../utils/DOMManipulation.js";
+import {
+    dexContainerEl,
+    resultsEl,
+    searchContainerEl,
+} from "../utils/HTMLElements.js";
+import { navigatePokemons } from "../utils/navigation.js";
 
-export const typeColors = [
-    { type: "normal", color: "A8A77A" },
-    { type: "fire", color: "EE8130" },
-    { type: "water", color: "6390F0" },
-    { type: "electric", color: "F7D02C" },
-    { type: "grass", color: "7AC74C" },
-    { type: "ice", color: "96D9D6" },
-    { type: "fighting", color: "C22E28" },
-    { type: "poison", color: "A33EA1" },
-    { type: "ground", color: "E2BF65" },
-    { type: "flying", color: "A98FF3" },
-    { type: "psychic", color: "F95587" },
-    { type: "bug", color: "A6B91A" },
-    { type: "rock", color: "B6A136" },
-    { type: "ghost", color: "735797" },
-    { type: "dragon", color: "6F35FC" },
-    { type: "dark", color: "705746" },
-    { type: "steel", color: "B7B7CE" },
-    { type: "fairy", color: "D685AD" },
-];
+const createElement = (type = "div", props = {}) => {
+    const element = document.createElement(type);
+    Object.entries(props).forEach(([key, value]) => (element[key] = value));
+    return element;
+};
 
-export function renderPokedex(pokemonData, details) {
+export function renderSearch(pokemonArr, results) {
+    resultsEl.forEach((e) => e.remove());
+
+    if (results.length > 1) {
+        const resultsContainer = createElement("div", {
+            className: "results",
+        });
+        const resultsList = createElement("ul");
+        results.forEach((result, index) => {
+            const resultContainer = createElement("li", {
+                className: "pokemonResult",
+            });
+            const name = createElement("p", {
+                className: "name",
+                textContent: result.name,
+            });
+            const image = createElement("img", {
+                src: result.sprite,
+                alt: `Picture displaying ${result.name}`,
+            });
+            //NEEDS UPDATE
+            resultContainer.addEventListener("click", () => {
+                navigatePokemons(pokemonArr, result.index);
+            });
+            resultContainer.append(name, image);
+            resultContainer.style.backgroundColor = result.color;
+            resultsList.append(resultContainer);
+        });
+        resultsContainer.append(resultsList);
+        searchContainerEl.append(resultsContainer);
+    } else {
+        resultsEl.forEach((e) => e.remove());
+    }
+}
+
+export function renderPokedex(pokemon) {
+    dexContainerEl.innerHTML = "";
     const pokedexContainer = createElement("div", {
         className: "pokedex ",
     });
@@ -32,20 +57,19 @@ export function renderPokedex(pokemonData, details) {
     const pokemonName = createElement("h3", {
         style: "text-align: center",
         textContent:
-            pokemonData.name.charAt(0).toUpperCase() +
-            pokemonData.name.slice(1),
-        class: `${pokemonData.name}`,
+            pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
+        class: `${pokemon.name}`,
     });
     const pokemonImage = createElement("img", {
-        classList: `pokemon ${pokemonData.name}`,
-        src: details.sprites.other["official-artwork"].front_default,
-        alt: `Sprite of ${pokemonData.name}`,
+        classList: `pokemon ${pokemon.name}`,
+        src: pokemon.sprite,
+        alt: `Sprite of ${pokemon.name}`,
     });
     const container = createElement("div", {
         className: "stats grid gtc-auto2",
     });
 
-    const pokemonStats = details.stats.map(({ base_stat, stat }) => {
+    pokemon.stats.forEach((stat) => {
         const statAndValcontainer = createElement("div", {
             className: "statAndValue flex-row just-spaB",
         });
@@ -66,22 +90,16 @@ export function renderPokedex(pokemonData, details) {
                 className: "stat",
             });
         }
-
         const statValue = createElement("span", {
-            textContent: base_stat,
+            textContent: stat.value,
             className: "value",
         });
         statAndValcontainer.append(statName, statValue);
-
-        return statAndValcontainer;
+        container.append(statAndValcontainer);
     });
 
-    pokedexContainer.style.backgroundColor = `#${
-        typeColors.find((entry) => entry.type === details.types[0].type.name)
-            .color
-    }`;
-    container.append(...pokemonStats);
+    pokedexContainer.style.backgroundColor = pokemon.color;
     pokemonContainer.append(pokemonName, pokemonImage, container);
     pokedexContainer.append(pokemonContainer);
-    dexContainer.append(pokedexContainer);
+    dexContainerEl.append(pokedexContainer);
 }
