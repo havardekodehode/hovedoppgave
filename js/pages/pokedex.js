@@ -12,9 +12,10 @@ const createElement = (type = "div", props = {}) => {
 };
 
 export function renderSearch(pokemonArr, results) {
-    resultsEl.forEach((e) => e.remove());
+    // resultsEl.forEach((e) => e.remove());
+    document.querySelectorAll(".results").forEach((e) => e.remove());
 
-    if (results.length > 1) {
+    if (results.length > 2) {
         const resultsContainer = createElement("div", {
             className: "results",
         });
@@ -42,7 +43,7 @@ export function renderSearch(pokemonArr, results) {
         resultsContainer.append(resultsList);
         searchContainerEl.append(resultsContainer);
     } else {
-        resultsEl.forEach((e) => e.remove());
+        document.querySelectorAll(".results").forEach((e) => e.remove());
     }
 }
 
