@@ -11,7 +11,7 @@
 
 ## Overview
 
-Simple website calculating relative weight to earth, on each planet of the solar system.
+Simple pokedex website, using tue PokeAPI.
 
 ### Screenshot
 
